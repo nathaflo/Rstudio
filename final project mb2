@@ -9,7 +9,7 @@
 ## Landsat5 2002 to 2011
 ############################# Set work directory #############################
 ## Set work directory 
-setwd("C:/Users/nathy/Desktop/METb2")
+setwd("C:/METb2")
 
 ## Download the required data 
 ## Install package
@@ -40,7 +40,7 @@ library(RStoolbox)
 
 # Area of Interest as "sp" object
 # Define the AOI and interact with the map
-aoi <- read_sf(dsn = "C:/Users/nathy/Desktop/METb2/AOI", layer = "study_area")  
+aoi <- read_sf(dsn = "C:/METb2/AOI", layer = "study_area")  
 aoi <- aoi[[2]]                                                  
 plot(aoi)         
 set_aoi(aoi)                                                    
@@ -50,7 +50,7 @@ get_aoi(type = "sp")
 
 # Define and Display the Products
 #set_archive  to create a directory for the produts
-set_archive("C:/Users/nathy/Desktop/METb2/Imagery")        
+set_archive("C:/METb2/Imagery")        
 
 # Display the status of all online services
 services_avail()   
@@ -89,7 +89,7 @@ images <- getLandsat_data(records = query[1,],                   #download the s
 # Set work directory
 
 setwd("C:/Users/nathy/Desktop/METb2/Imagery/get_data/LANDSAT/SR/LT05_L1TP_028045_20020925_20161207_01_T1_LEVEL_Sr")    
-direc_imagery02 <- "C:/Users/nathy/Desktop/METb2/Imagery/get_data/LANDSAT/SR/LT05_L1TP_028045_20020925_20161207_01_T1_LEVEL_Sr/LT05_L1TP_028045_20020925_20161207_01_T1_LEVEL_Sr.ZIP" #zip folder
+direc_imagery02 <- "C:/METb2/Imagery/get_data/LANDSAT/SR/LT05_L1TP_028045_20020925_20161207_01_T1_LEVEL_Sr/LT05_L1TP_028045_20020925_20161207_01_T1_LEVEL_Sr.ZIP" #zip folder
 unzip(direc_imagery02, list = FALSE, overwrite = TRUE, junkpaths = FALSE,                                                                                                              #unzip the work folder 
       exdir = ".", unzip = "internal", setTimes = FALSE)
 
@@ -100,8 +100,8 @@ images <- getLandsat_data(records = query[49,],                  #download the s
                           level = "sr", 
                           source = "auto")
 
-setwd("C:/Users/nathy/Desktop/METb2/Imagery/get_data/LANDSAT/SR/LT05_L1TP_028045_20110121_20161010_01_T1_LEVEL_Sr")     #set the work directory
-direc_imagery11 <- "C:/Users/nathy/Desktop/METb2/Imagery/get_data/LANDSAT/SR/LT05_L1TP_028045_20110121_20161010_01_T1_LEVEL_Sr/LT05_L1TP_028045_20110121_20161010_01_T1_LEVEL_Sr.ZIP" #zip folder
+setwd("C:/METb2/Imagery/get_data/LANDSAT/SR/LT05_L1TP_028045_20110121_20161010_01_T1_LEVEL_Sr")     #set the work directory
+direc_imagery11 <- "C:/METb2/Imagery/get_data/LANDSAT/SR/LT05_L1TP_028045_20110121_20161010_01_T1_LEVEL_Sr/LT05_L1TP_028045_20110121_20161010_01_T1_LEVEL_Sr.ZIP" #zip folder
 unzip(direc_imagery11, list = FALSE, overwrite = TRUE, junkpaths = FALSE,                                      
       exdir = ".", unzip = "internal", setTimes = FALSE)
 
@@ -112,8 +112,8 @@ images <- getLandsat_data(records = query[49,],
                           level = "sr", 
                           source = "auto")
 
-setwd("C:/Users/nathy/Desktop/METb2/Imagery/get_data/LANDSAT/SR/LT05_L1TP_028045_20050512_20161127_01_T1_LEVEL_Sr")        
-direc_imagery05 <- "C:/Users/nathy/Desktop/METb2/Imagery/get_data/LANDSAT/SR/LT05_L1TP_028045_20050512_20161127_01_T1_LEVEL_Sr/LT05_L1TP_028045_20050512_20161127_01_T1_LEVEL_Sr.ZIP"
+setwd("C:/METb2/Imagery/get_data/LANDSAT/SR/LT05_L1TP_028045_20050512_20161127_01_T1_LEVEL_Sr")        
+direc_imagery05 <- "C:/METb2/Imagery/get_data/LANDSAT/SR/LT05_L1TP_028045_20050512_20161127_01_T1_LEVEL_Sr/LT05_L1TP_028045_20050512_20161127_01_T1_LEVEL_Sr.ZIP"
 unzip(direc_imagery05, list = FALSE, overwrite = TRUE, junkpaths = FALSE, 
       exdir = ".", unzip = "internal", setTimes = FALSE)
 
@@ -122,8 +122,8 @@ unzip(direc_imagery05, list = FALSE, overwrite = TRUE, junkpaths = FALSE,
 # Data 2002
 
 plot.new()
-setwd("C:/Users/nathy/Desktop/METb2/Imagery/get_data/LANDSAT/SR/LT05_L1TP_028045_20020925_20161207_01_T1_LEVEL_Sr")     #set the work directory       
-imagery02 <- list.files(path = "C:/Users/nathy/Desktop/METb2/Imagery/get_data/LANDSAT/SR/LT05_L1TP_028045_20020925_20161207_01_T1_LEVEL_Sr", 
+setwd("C:/METb2/Imagery/get_data/LANDSAT/SR/LT05_L1TP_028045_20020925_20161207_01_T1_LEVEL_Sr")     #set the work directory       
+imagery02 <- list.files(path = "C:/METb2/Imagery/get_data/LANDSAT/SR/LT05_L1TP_028045_20020925_20161207_01_T1_LEVEL_Sr", 
                         pattern = glob2rx("*band*.tif$"), all.files = TRUE,    # vector of the names GeoTiff files
                         full.names = FALSE, recursive = FALSE,
                         ignore.case = FALSE, include.dirs = FALSE)
@@ -158,8 +158,8 @@ box(col = "black")                                                             #
 zm(type = "session", rp = NULL)                                                #zoom with commands - take a while                            
 
 # Data 2011   
-setwd("C:/Users/nathy/Desktop/METb2/Imagery/get_data/LANDSAT/SR/LT05_L1TP_028045_20110121_20161010_01_T1_LEVEL_Sr")    
-imagery11 <- list.files(path = "C:/Users/nathy/Desktop/METb2/Imagery/get_data/LANDSAT/SR/LT05_L1TP_028045_20110121_20161010_01_T1_LEVEL_Sr", 
+setwd("C:/METb2/Imagery/get_data/LANDSAT/SR/LT05_L1TP_028045_20110121_20161010_01_T1_LEVEL_Sr")    
+imagery11 <- list.files(path = "C:/METb2/Imagery/get_data/LANDSAT/SR/LT05_L1TP_028045_20110121_20161010_01_T1_LEVEL_Sr", 
                         pattern = glob2rx("*band*.tif$"), all.files = TRUE,    # vector of the names of GeoTiff files
                         full.names = FALSE, recursive = FALSE,
                         ignore.case = FALSE, include.dirs = FALSE)
@@ -191,7 +191,7 @@ zm(type = "session", rp = NULL)                                                #
 
 
 # Subset the interest area and read the polygon 
-subset <- readOGR(dsn = "C:/Users/nathy/Desktop/METb2/SUBSET/subset.shp", layer = "subset")   
+subset <- readOGR(dsn = "C:/METb2/SUBSET/subset.shp", layer = "subset")   
 subset                                                                       
 plot(subset)                                                                   #plot the shape file
 
@@ -212,7 +212,7 @@ subset11_final <- plotRGB(subset11, r = 6, g = 4, b = 2,                       #
 
 
 # Random Forest Classification
-training_data <- readOGR(dsn = "C:/Users/nathy/Desktop/METb2/TRAINING_DATA/training_c.shp", layer = "training_c")    #define the training shape file
+training_data <- readOGR(dsn = "C:/METb2/TRAINING_DATA/training_c.shp", layer = "training_c")    #define the training shape file
 training_data                                                                                        #display information of the shape file
 plot(training_data)                                                                                  #plot the shape file
 
@@ -221,12 +221,12 @@ subset02                                                                        
 training_data 
 
 getwd()                                                                                             
-setwd("C:/Users/nathy/Desktop/METb2/RF_CLASSIFICATION")                                                    # new directory for classification
+setwd("C:/METb2/RF_CLASSIFICATION")                                                                  # new directory for classification
 classification02 <- superClass(subset02, training_data, responseCol = "class", trainPartition = 0.75,      #classify raster brick subset 2002
                                model = "rf", mode  = "classification", filename = "classification02.tif", 
                                overwrite = T)
 plot(classification02$map, main = "Random Forest Classification 2002 - Iquitos")                     #plot classification 2002
-classification02$validation                                                                          #display information about validation process
+classification02$validation                                                                          #information validation process
 #overal accuracy for classification 2002: 0.8894
 #kappa index: 0.7321
 
@@ -238,16 +238,16 @@ training_data
 classification11 <- superClass(subset11, training_data, responseCol = "class", trainPartition = 0.75,     #classify raster brick subset 2011
                                model = "rf", mode  = "classification", filename = "classification11.tif", 
                                overwrite = T)
-plot(classification11$map, main = "Random Forest Classification 2011 - Iquitos")             #plot classification 2011         
-classification11$validation                                                                  #display information about validation process
+plot(classification11$map, main = "Random Forest Classification 2011 - Iquitos")                     #plot classification 2011         
+classification11$validation                                                                          #display information about validation process
 #overal accuracy for classification 2002: 0.8576
 #kappa index: 0.6841
 
 
 # Change Detection 
-class02 <- raster("C:/Users/nathy/Desktop/METb2/RF_CLASSIFICATION/classification02.tif")            #define the classification 2002 image           
-class11 <- raster("C:/Users/nathy/Desktop/METb2/RF_CLASSIFICATION/classification11.tif")            #define the classification 2011 image
-change_detection <- overlay(class02, class11,                                    #determine the difference (changes) between the images
+class02 <- raster("C:/METb2/RF_CLASSIFICATION/classification02.tif")            #define the classification 2002        
+class11 <- raster("C:/METb2/RF_CLASSIFICATION/classification11.tif")            #define the classification 2011 
+change_detection <- overlay(class02, class11,                                   #changes between the images
                             fun = function(r1,r2){(r2-r1)}, 
                             unstack = T, forcefun = F, 
                             filename = "change_detection.tif", overwrite = T)
@@ -265,19 +265,19 @@ plot(reclass_change_detection, main = "Reclassified Built Change Detection")    
 
 
 # Mask the Changes with the Urban Area of Iquitos                     
-urban_area <- readOGR(dsn = "CC:/Users/nathy/Desktop/METb2/URBAN_AREA/urban_area.shp", layer = "urban_area")    # urban area shape file
+urban_area <- readOGR(dsn = "C:/METb2/URBAN_AREA/urban_area.shp", layer = "urban_area")    # urban area shape file
 urban_area                                                                                     
 plot(urban_area)                                                                                     #plot the urban area file
 
-built_change_detection_2002_2011 <- raster("C:/Users/nathy/Desktop/METb2/RF_CLASSIFICATION/reclass_change_detection.tif")   #work raster file
+built_change_detection_2002_2011 <- raster("C:/METb2/RF_CLASSIFICATION/reclass_change_detection.tif")   #work raster file
 
-built_changes <- mask(built_change_detection_2002_2011, urban_area,                                  #mask the raster file with the urban area shp
+built_changes <- mask(built_change_detection_2002_2011, urban_area,                                  #mask raster file with urban area shp
                       filename = "Built_Change_Detection_2002_2011.tif", overwrite = T)
 plot(built_changes, main = "Built Change Detection 2002-2011 from Iquitos")                          #plot the final result
 
 
 # Last Plot
-built_changes_final <- raster("C:/Users/nathy/Desktop/METb2/RF_CLASSIFICATION/Built_Change_Detection_2002_2011.tif")
+built_changes_final <- raster("C:/METb2/RF_CLASSIFICATION/Built_Change_Detection_2002_2011.tif")
 built_changes_final
 urban_area
 
